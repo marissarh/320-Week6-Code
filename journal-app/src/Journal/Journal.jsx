@@ -9,6 +9,7 @@ export default function Journal() {
     const [hasError, setHasError] =useState(false);
     useEffect(()=>{
         const getData =async()=>{
+            try{
             onSnapshot(collection(db, "journal-entries"), snapshot =>{
                 console.log("Current data: ", snapshot.docs);
                 setEntries(querySnapshot.docs)

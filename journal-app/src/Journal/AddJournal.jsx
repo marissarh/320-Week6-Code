@@ -14,7 +14,7 @@ function AddJournal () {
 
 
 // Add a new document in collection "cities"
-const docRef= await setDoc(doc(db, "journal-entries"), {
+const docRef=  await setDoc(doc(db, "journal-entries"), {
   entry: entry,
   createdAt: new Date( )
 });
