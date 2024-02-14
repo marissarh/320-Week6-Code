@@ -15,9 +15,6 @@ export default function Journal() {
                 setEntries(querySnapshot.docs)
             });
             setIsLoading(false)
-           
-            
-            
         }
         catch {
             setHasError(true)
