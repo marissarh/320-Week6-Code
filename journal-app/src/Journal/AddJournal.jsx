@@ -16,6 +16,7 @@ function AddJournal() {
         setEntry('')
         console.log("Document written with ID: ", docRef.id);
      }
+     
 
   return (
     <>
