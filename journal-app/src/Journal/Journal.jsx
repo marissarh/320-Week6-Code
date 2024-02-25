@@ -4,7 +4,6 @@ import { collection, getDocs, doc, onSnapshot, deleteDoc, setDoc } from "firebas
 import { Link } from 'react-router-dom';
 import AddJournal from './AddJournal';
 import { query, orderBy } from "firebase/firestore";  
-import JournalEntry from './JournalEntry';
 
 export default function Journal() {
     const [entries, setEntries] = useState([]);
