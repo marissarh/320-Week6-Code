@@ -15,11 +15,13 @@ export default function JournalEntry() {
 
             try{
 
-                const docRef = doc(db, "journal-entries", id);
+                const userId = "7qoG8nQFQtr4lZThmSmj"
+
+                const docRef = doc(db, "users", userId, "journal-entries", id);
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data());
+                //console.log("Document data:", docSnap.data());
                 setEntry(docSnap.data() );
                 setHasError(false)
                 setIsLoading(false)
@@ -48,7 +50,7 @@ export default function JournalEntry() {
     return (
         <div>
             <h1>Journal Entry: {id}</h1>
-            <p>{entry.data().entry}</p>
+            <p>{entry.entry}</p>
         </div>
     );
 }

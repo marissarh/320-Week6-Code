@@ -1,6 +1,6 @@
 import React,{ useEffect, useState } from 'react';
 import db from '../db'
-import { collection, getDocs, doc, onSnapshot, deleteDoc, setDoc } from "firebase/firestore";
+import { collection, doc, onSnapshot, deleteDoc, setDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
 import AddJournal from './AddJournal';
 import { query, orderBy } from "firebase/firestore";  
@@ -35,7 +35,8 @@ const getData = async()=>{
   //console.log(doc.id, " => ", doc.data());
 //});
 
-const journalQuery = query(collection(db, 'journal-entries'), orderBy("createdAt", 'desc'));
+const userId = "7qoG8nQFQtr4lZThmSmj"
+const journalQuery = query(collection(db, "users", userId, 'journal-entries'), orderBy("createdAt", 'desc'));
 
 onSnapshot(journalQuery, snapshot  => {
     //console.log("Current data: ", snapshot.docs); 
