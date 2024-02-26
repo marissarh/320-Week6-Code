@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import { collection, addDoc } from "firebase/firestore"; 
 import db from '../db'
 
-function AddJournal() {
+
+export default function AddJournal() {
     const [entry, setEntry] = useState('');
     const handleSubmit =  async e =>{
         e.preventDefault();
@@ -31,4 +32,4 @@ function AddJournal() {
   )
 }
 
-export default AddJournal
+
